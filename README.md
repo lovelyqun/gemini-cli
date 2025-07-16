@@ -9,7 +9,7 @@
 
 ## ✨ 项目概述
 
-Gemini Web Simple 是一个轻量级的网页聊天应用，让用户可以通过浏览器直接与 Google Gemini AI 进行对话。项目采用简洁的架构设计，专注于核心功能的实现。
+Gemini Web Simple 是一个轻量级的网页agent应用，让用户可以通过浏览器直接与 Google Gemini CLI 进行对话。通过Gemini CLI 自带的工具和提示语，可以实现各种agent应用。项目采用简洁的架构设计，专注于核心功能的实现。
 
 ### 🎯 核心特性
 
