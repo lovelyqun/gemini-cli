@@ -1,5 +1,7 @@
 # Gemini CLI Web简化版：基于Core包的智能Web扩展架构详解
 
+项目地址：https://github.com/lovelyqun/gemini-cli-web.git
+
 ## 前言
 
 在AI应用开发领域，如何将强大的命令行工具转化为易用的Web应用是一个常见挑战。本文将深入分析 `packages/web-simple` 的实现，这是一个基于 Gemini CLI Core 包构建的Web扩展，展示了如何优雅地复用现有核心逻辑，快速构建功能完整的Web AI助手。
