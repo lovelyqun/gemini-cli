@@ -54,7 +54,7 @@ packages/web-simple/
 ### 1️⃣ 环境准备
 
 确保您的系统已安装：
-- [Node.js](https://nodejs.org/) 18.0.0 或更高版本
+- [Node.js](https://nodejs.org/) 20.0.0 或更高版本
 - npm 包管理器
 
 ### 2️⃣ 获取 API 密钥
@@ -66,21 +66,29 @@ packages/web-simple/
 ### 3️⃣ 安装和配置
 
 ```bash
+# 进入项目
+# 安装gemini-cli 项目依赖
+npm install
+
+# 构建gemini-cli 项目
+npm run build
+
 # 进入服务器目录
 cd packages/web-simple/server
 
 # 安装依赖
 npm install
 
+# 创建环境变量文件
+cp .env.example .env
+
 # 设置环境变量
-export GEMINI_API_KEY="your_gemini_api_key_here"
+GEMINI_API_KEY="your_gemini_api_key_here"
 ```
 
 ### 4️⃣ 启动应用
 
 ```bash
-# 使用启动脚本（推荐）
-./start.sh
 
 # 或直接运行
 npm start
@@ -179,7 +187,7 @@ POST /api/reset
 **Q: 服务器启动失败？**
 ```bash
 # 检查 Node.js 版本
-node --version  # 需要 >= 18.0.0
+node --version  # 需要 >= 20.0.0
 
 # 检查 API 密钥
 echo $GEMINI_API_KEY

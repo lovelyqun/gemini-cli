@@ -187,10 +187,10 @@ async function handleWebSocketChat(ws, connectionId, data) {
         return;
     }
 
-    if (message.length > 10000) {
+    if (message.length > 100000) {
         ws.send(JSON.stringify({
             type: 'error',
-            error: '消息内容过长，请限制在10000字符以内',
+            error: '消息内容过长，请限制在100000字符以内',
             timestamp: new Date().toISOString()
         }));
         return;
@@ -226,10 +226,10 @@ async function handleWebSocketChat(ws, connectionId, data) {
         // 创建请求的控制器用于取消
         const abortController = new AbortController();
 
-        // 设置请求超时 (5分钟)
+        // 设置请求超时 (3分钟)
         const timeoutId = setTimeout(() => {
             abortController.abort();
-        }, 5 * 60000);
+        }, 3 * 60000);
 
         try {
             // 创建消息内容
@@ -324,6 +324,7 @@ async function handleWebSocketChat(ws, connectionId, data) {
                         break;
 
                     case GeminiEventType.ToolCallResponse:
+                   
                     case GeminiEventType.ToolCallConfirmation:
                         // 推送工具调用信息
                         ws.send(JSON.stringify({
@@ -607,8 +608,8 @@ async function initializeGeminiConfig() {
             debugMode: process.env.DEBUG === 'true',
             question: undefined,
             fullContext: false,
-            coreTools: ['ReadFileTool', 'WriteFileTool', 'EditTool', 'GrepTool', 'ShellTool'], // 启用核心文件操作工具
-            excludeTools: [], // 排除Shell工具以提高安全性
+            coreTools: ['LSTool','ReadFileTool','ReadManyFilesTool', 'WriteFileTool', 'EditTool', 'GrepTool','GlobTool', 'ShellTool','WebFetchTool','WebSearchTool','MemoryTool'], // 启用核心文件操作工具
+            excludeTools: [],
             toolDiscoveryCommand: undefined,
             toolCallCommand: undefined,
             mcpServerCommand: undefined,
